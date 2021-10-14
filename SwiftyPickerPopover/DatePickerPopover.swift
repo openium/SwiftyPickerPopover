@@ -34,6 +34,11 @@ public class DatePickerPopover: AbstractPopover {
 
     /// Date mode
     private(set) var dateMode_: UIDatePicker.Mode = .date
+    
+    /// preferred style
+    @available(iOS 13.4, *)
+    private(set) lazy var preferredDatePickerStyle_: UIDatePickerStyle = .wheels
+    
     /// Limit of range
     private(set) var minimumDate: ItemType?
     private(set) var maximumDate: ItemType?
@@ -72,6 +77,16 @@ public class DatePickerPopover: AbstractPopover {
         self.dateMode_ = dateMode
         return self
     }
+    
+    /// Set preferred style of picker
+     ///
+     /// - Parameter preferredDatePickerStyle: UIDatePickerStyle of picker.
+     /// - Returns: self
+     @available(iOS 13.4, *)
+     public func setPreferredDatePickerStyle(_ preferredDatePickerStyle: UIDatePickerStyle)->Self{
+         self.preferredDatePickerStyle_ = preferredDatePickerStyle
+         return self
+     }
     
     /// Set minimum date
     ///
@@ -185,5 +200,5 @@ public class DatePickerPopover: AbstractPopover {
     public func setValueChange(action: ActionHandlerType?)->Self{
         valueChangeAction = action
         return self
-    }    
+    }
 }
