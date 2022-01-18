@@ -72,6 +72,10 @@ public class StringPickerPopover: AbstractPopover {
         // Set parameters
         self.title = title
         self.choices = choices
+        
+        if #available(iOS 13, *) {
+            fontColor = .label
+        }
     }
 
     /// Set font
