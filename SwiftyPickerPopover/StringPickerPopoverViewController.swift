@@ -36,13 +36,6 @@ public class StringPickerPopoverViewController: AbstractPickerPopoverViewControl
         // Select row if needed
         picker?.selectRow(popover.selectedRow, inComponent: 0, animated: true)
 
-        // Set up cancel button
-        if #available(iOS 11.0, *) { }
-        else {
-            navigationItem.leftBarButtonItem = nil
-            navigationItem.rightBarButtonItem = nil
-        }
-
         cancelButton.title = popover.cancelButton.title
         if let font = popover.cancelButton.font {
             cancelButton.setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)

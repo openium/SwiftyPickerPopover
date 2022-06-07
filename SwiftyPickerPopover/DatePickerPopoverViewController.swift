@@ -21,11 +21,6 @@ public class DatePickerPopoverViewController: AbstractPickerPopoverViewControlle
     
     override func refrectPopoverProperties(){
         super.refrectPopoverProperties()
-        if #available(iOS 11.0, *) { }
-        else {
-            navigationItem.leftBarButtonItem = nil
-            navigationItem.rightBarButtonItem = nil
-        }
         cancelButton.title = popover.cancelButton.title
         if let font = popover.cancelButton.font {
             cancelButton.setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
@@ -47,9 +42,7 @@ public class DatePickerPopoverViewController: AbstractPickerPopoverViewControlle
         clearButton.tintColor = popover.clearButton.color ?? popover.tintColor
         clearButton.isHidden = popover.clearButton.action == nil
 
-        if #available(iOS 13.4, *) {
-            picker.preferredDatePickerStyle = popover.preferredDatePickerStyle_
-        }
+        picker.preferredDatePickerStyle = popover.preferredDatePickerStyle_
         picker.date = popover.selectedDate
         picker.minimumDate = popover.minimumDate
         picker.maximumDate = popover.maximumDate

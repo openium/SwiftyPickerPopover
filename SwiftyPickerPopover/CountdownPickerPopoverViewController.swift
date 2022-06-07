@@ -26,11 +26,6 @@ public class CountdownPickerPopoverViewController: AbstractPickerPopoverViewCont
     
     override func refrectPopoverProperties(){
         super.refrectPopoverProperties()
-        if #available(iOS 11.0, *) { }
-        else {
-            navigationItem.leftBarButtonItem = nil
-            navigationItem.rightBarButtonItem = nil
-        }
         cancelButton.title = popover.cancelButton.title
         if let font = popover.cancelButton.font {
             cancelButton.setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
