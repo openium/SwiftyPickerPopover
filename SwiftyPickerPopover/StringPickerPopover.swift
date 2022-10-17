@@ -72,6 +72,8 @@ public class StringPickerPopover: AbstractPopover {
         // Set parameters
         self.title = title
         self.choices = choices
+        
+        fontColor = .label
     }
 
     /// Set font

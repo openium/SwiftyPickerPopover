@@ -40,13 +40,6 @@ public class ColumnStringPickerPopoverViewController: AbstractPickerPopoverViewC
     override func refrectPopoverProperties(){
         super.refrectPopoverProperties()
         
-        // Set up cancel button
-        if #available(iOS 11.0, *) {}
-        else {
-            navigationItem.leftBarButtonItem = nil
-            navigationItem.rightBarButtonItem = nil
-        }
-        
         // Select rows if needed
         popover.selectedRows.enumerated().forEach {
             picker.selectRow($0.element, inComponent: $0.offset, animated: true)
